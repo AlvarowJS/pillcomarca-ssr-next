@@ -2,6 +2,11 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { FaFacebook, FaTiktok } from "react-icons/fa";
+import { GrInstagram } from "react-icons/gr";
+
+
+
 
 const navItems = [
     // Institución
@@ -108,13 +113,28 @@ export const Navbar = () => {
                 </div>
 
                 <div className="hidden sm:flex items-center space-x-4">
-                    <button onClick={facebookLink} className="text-blue-600">Facebook</button>
-                    <button onClick={insta} className="text-orange-500">Instagram</button>
-                    <button onClick={tiktokLink} className="text-black">TikTok</button>
+                    <FaFacebook
+                        onClick={facebookLink}
+                        size={25}
+                        color='blue'
+                        fontWeight='bold'
+                    />
+                    <GrInstagram
+                        onClick={insta}
+                        size={25}
+                        color='rgb(240, 79, 15)'
+                        fontWeight='bold'
+                    />
+                    <FaTiktok
+                        onClick={tiktokLink}
+                        size={25}
+                        fontWeight='bold'
+                    />
+
                 </div>
 
                 <div className="hidden md:flex">
-                    <Image src="/portal.png" alt="Portal de Transparencia" width={100} height={50} className="mt-5 cursor-pointer" onClick={portalTransparencia} />
+                    <Image src="/images/logos/portal.png" alt="Portal de Transparencia" width={100} height={50} className="mt-5 cursor-pointer" onClick={portalTransparencia} />
                 </div>
 
                 <button onClick={handleCloseMenus} className="md:hidden text-black">
