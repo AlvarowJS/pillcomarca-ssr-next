@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FaFacebook, FaTiktok } from "react-icons/fa";
 import { GrInstagram } from "react-icons/gr";
+import { IoMenu } from "react-icons/io5";
 
 
 
@@ -27,7 +28,6 @@ const navItems = [
     { path: '/normativas', text: 'Normativa' },
     { path: '/noticias', text: 'Noticias' },
     { path: '/convocatoria', text: 'Convocatoria' },
-    { path: '/municipio-saludable', text: 'Municipio Saludable' }
 ];
 
 export const Navbar = () => {
@@ -69,10 +69,10 @@ export const Navbar = () => {
         <nav className="bg-white shadow-md">
             <div className="container mx-auto flex items-center justify-between p-4">
                 <Link href="/" className="flex items-center">
-                    <Image src="/images/logos/logo.png" alt="Logo" width={220} height={50} className="mt-5" />
+                    <Image src="/images/logos/logo.png" alt="Logo de la municipalidad distrital de pillco marca" width={240} height={70} className="mt-2 mr-10" />
                 </Link>
 
-                <div className="hidden md:flex items-center space-x-4">
+                <div className="hidden lg:flex items-center space-x-4 gap-10">
                     <div className="relative">
                         <button onClick={handleOpenInstitutionMenu} className="flex items-center text-black">
                             Institución
@@ -129,16 +129,20 @@ export const Navbar = () => {
                         onClick={tiktokLink}
                         size={25}
                         fontWeight='bold'
+                        color='black'
                     />
 
                 </div>
 
                 <div className="hidden md:flex">
-                    <Image src="/images/logos/portal.png" alt="Portal de Transparencia" width={100} height={50} className="mt-5 cursor-pointer" onClick={portalTransparencia} />
+                    <Image src="/images/logos/portal.png" alt="Portal de Transparencia" width={120} height={70} className="mt-5 ml-5 cursor-pointer" onClick={portalTransparencia} />
                 </div>
 
-                <button onClick={handleCloseMenus} className="md:hidden text-black">
-                    &#9776;
+                <button onClick={handleCloseMenus} className="lg:hidden text-black">
+                    <IoMenu 
+                        size={30}
+                    />
+
                 </button>
             </div>
         </nav>
