@@ -1,4 +1,5 @@
 import { Navbar } from "@/components";
+import { SideBar } from "@/components/navbar/SideBar";
 
 export default function LandingPage({ children }: {
     children: React.ReactNode;
