@@ -1,4 +1,5 @@
 import { Navbar } from "@/components";
+import { Footer } from "@/components/footer/Footer";
 import { SideBar } from "@/components/navbar/SideBar";
 
 export default function LandingPage({ children }: {
@@ -13,6 +14,7 @@ export default function LandingPage({ children }: {
                     {children}
                 </div>
             </main>
+            <Footer />
         </>
     );
 }

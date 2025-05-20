@@ -9,21 +9,26 @@ interface Props {
 
 export const DocumentGridItem = ({ gestion }: Props) => {
   return (
-    <div className="my-5 border-4 p-2">
-      <h2 className="text-3xl">
+    <div className="bg-white border border-gray-200 rounded-2xl w-1/5">
+      <h3 className="bg-blue-400 text-white text-center font-bold p-2">
         {gestion.nombre}
-      </h2>
-      {
-        gestion.gestiondetalle.map(lista => (
-          <div className="bg-amber-50 flex p-4 m-2 cursor-pointer"
-            onClick={() => window.open(lista?.link)}>
-            <LuDownload />
-            <p>
-              {lista?.nombre}
-            </p>
-          </div>
+      </h3>
+      <div>
+        {
+          gestion.gestiondetalle.map(lista => (
+            <div className="flex p-4 m-2 cursor-pointer hover:bg-gray-300 rounded-lg "
+              onClick={() => window.open(lista?.link)}>
+              <p>
+                <LuDownload />
+              </p>
+              <p>
+                {lista?.nombre}
+              </p>
+              
+            </div>
 
-        ))}
+          ))}
+      </div>
     </div>
   )
 }

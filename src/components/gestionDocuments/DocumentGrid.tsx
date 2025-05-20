@@ -8,11 +8,8 @@ interface Props {
 
 export const DocumentGrid = ({ gestions }: Props) => {
     return (
-        <>
-            <h1 className="my-5 text-4xl font-extrabold text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                Documentos de Gestión
-            </h1>
-            <div className='flex'>
+        <>            
+            <div className='flex flex-wrap gap-4 mt-6 mx-4 justify-center'>
                 {
                     gestions.map(gestion => (
                         <DocumentGridItem

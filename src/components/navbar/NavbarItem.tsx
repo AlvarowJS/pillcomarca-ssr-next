@@ -25,10 +25,12 @@ export const NavbarItem = ({ item, openMenu, setOpenMenu }: Props) => {
                     }
                     className="flex items-center text-black">
                     {item.text}
-                    <FaAngleDown />
+                    {
+                        isOpen ? <FaAngleDown className="rotate-180" /> : <FaAngleDown />
+                    }
                 </button>
                 {isOpen && (
-                    <div className="absolute bg-white shadow-lg mt-2 rounded">
+                    <div className="absolute bg-white shadow-lg w-48 mt-2 rounded">
                         {item.submenus.map((sub) => (
                             <Link
                                 key={sub.path}
