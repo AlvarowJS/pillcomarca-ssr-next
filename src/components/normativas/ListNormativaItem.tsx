@@ -2,14 +2,14 @@ import { DocumentoNormativo } from '@/interfaces/normativa.interface'
 import React from 'react'
 import { FaDownload, FaEye } from 'react-icons/fa';
 interface Props {
-    document: DocumentoNormativo[];
+    document: DocumentoNormativo;
 }
 export const ListNormativaItem = ({ document }: Props) => {
     return (
         <>
             <section className="bg-white shadow-lg rounded-lg py-6 px-4 mb-4 border-gray-300 border-1">
                 <div className='flex gap-3 text-xs'>
-                    <div className="bg-blue-500 text-white py-2 px-4 rounded-4xl">
+                    <div className="bg-blue-500 text-white py-2 px-4 rounded-4xl">                        
                         {document.attributes.fecha}
                     </div>
                     <div className="bg-blue-500 text-white py-2 px-4 rounded-4xl">

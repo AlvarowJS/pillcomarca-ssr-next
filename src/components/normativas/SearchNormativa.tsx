@@ -1,58 +1,115 @@
-export const SearchNormativa = () => {
-  
-    return (
-        <div>
-            <p>
-                Filtrar por:
-            </p>
+import { TipoDeDocumento } from "@/interfaces";
+import { useState } from "react";
 
-            <div className="flex gap-6 justify-center flex-col">
-                <div>
-                    <label className="block text-sm/6 font-medium text-gray-900">
-                        Tipo de documento
-                    </label>
-                    <div className="mt-2">
-                        <select className="p-2 border border-gray-300 rounded w-full">
-                            <option value="2023">2023</option>
-                            <option value="2022">2022</option>
-                            <option value="2021">2021</option>
-                            <option value="2020">2020</option>
-                            <option value="2019">2019</option>
-                            <option value="2018">2018</option>
-                            <option value="2017">2017</option>
-                            <option value="2016">2016</option>
-                        </select>
-                    </div>
-                </div>
-                <div>
-                    <label className="block text-sm/6 font-medium text-gray-900">
-                        Filtrar por Año
-                    </label>
-                    <div className="mt-2">
-                        <select className="p-2 border border-gray-300 rounded w-full">
-                            <option value="2023">2023</option>
-                            <option value="2022">2022</option>
-                            <option value="2021">2021</option>
-                            <option value="2020">2020</option>
-                            <option value="2019">2019</option>
-                            <option value="2018">2018</option>
-                            <option value="2017">2017</option>
-                            <option value="2016">2016</option>
-                        </select>
-                    </div>
-                </div>
-                <div>
-                    <label className="block text-sm/6 font-medium text-gray-900">
-                        Buscar por nombre:
-                    </label>
-                    <div className="mt-2">
-                        <input type="text" name="last-name" id="last-name" className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
-                    </div>
-                </div>
-                <button className='bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700'>
-                    Buscar
-                </button>
-            </div>
-        </div>
-    )
+interface Props {
+  tipos: TipoDeDocumento[] | undefined;
+  setFilters: React.Dispatch<React.SetStateAction<any>>;
+  setCurrentPage: React.Dispatch<React.SetStateAction<any>>;
 }
+
+export const SearchNormativa = ({ tipos, setFilters, setCurrentPage }: Props) => {
+  const [formValues, setFormValues] = useState({
+    tipodedocumento_id: "",
+    year: "",
+    nombre: "",
+    page: ""
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormValues(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFilters(formValues);
+  };
+
+  const handleClear = () => {
+    setFormValues({
+      tipodedocumento_id: "",
+      year: "",
+      nombre: "",
+      page:""
+    });
+    setCurrentPage(1)
+    setFilters({});
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <p className="mb-2 font-bold text-gray-700">Filtrar por:</p>
+
+      <div className="flex gap-6 justify-center flex-col">
+        {/* Tipo de documento */}
+        <div>
+          <label className="block text-sm font-medium text-gray-900">Tipo de documento</label>
+          <select
+            name="tipodedocumento_id"
+            value={formValues.tipodedocumento_id}
+            onChange={handleChange}
+            className="p-2 border border-gray-300 rounded w-full"
+          >
+            <option value="">Todos</option>
+            {tipos?.map(tipo => (
+              <option key={tipo.id} value={tipo.id}>
+                {tipo.nombre}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* Año */}
+        <div>
+          <label className="block text-sm font-medium text-gray-900">Filtrar por Año</label>
+          <select
+            name="year"
+            value={formValues.year}
+            onChange={handleChange}
+            className="p-2 border border-gray-300 rounded w-full"
+          >
+            <option value="">Todos</option>
+            {Array.from({ length: 10 }, (_, i) => {
+              const year = 2025 - i;
+              return (
+                <option key={year} value={year}>
+                  {year}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+
+        {/* Nombre */}
+        <div>
+          <label className="block text-sm font-medium text-gray-900">Buscar por nombre:</label>
+          <input
+            type="text"
+            name="nombre"
+            value={formValues.nombre}
+            onChange={handleChange}
+            className="block w-full rounded-md bg-white px-3 py-1.5 border border-gray-300 text-base text-gray-900 placeholder:text-gray-400 focus:outline-blue-600 sm:text-sm"
+            placeholder="Ingrese un nombre..."
+          />
+        </div>
+
+        {/* Botones */}
+        <div className="flex gap-4 justify-end">
+          <button
+            type="button"
+            onClick={handleClear}
+            className="bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded hover:bg-gray-400"
+          >
+            Limpiar
+          </button>
+          <button
+            type="submit"
+            className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700"
+          >
+            Buscar
+          </button>
+        </div>
+      </div>
+    </form>
+  );
+};
