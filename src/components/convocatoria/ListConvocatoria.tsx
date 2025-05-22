@@ -6,12 +6,11 @@ import { Convocatoria } from '@/interfaces';
 
 export const ListConvocatoria = () => {
     const [convocatorias, setConvocatorias] = useState<Convocatoria[]>()
-
+    //Ni bien abre este componente se ejecuta esto
     useEffect(() => {
         const fetchConvocatoria = async () => {
             try {
-                const data = await getConvocatoria();
-                console.log(data, "Asdasds")
+                const data = await getConvocatoria();                
                 setConvocatorias(data)
             } catch (error) {
                 console.log(error)
@@ -21,7 +20,7 @@ export const ListConvocatoria = () => {
     }, [])
 
     return (
-        <>
+        <div className='flex gap-4 flex-col'>
             {
                 convocatorias?.map((convocatoria) => (
                     <ItemConvocatoria
@@ -30,7 +29,7 @@ export const ListConvocatoria = () => {
                     />
                 ))
             }
-        </>
+        </div>
     )
 }
 
