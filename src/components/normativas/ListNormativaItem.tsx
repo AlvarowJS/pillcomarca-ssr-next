@@ -1,4 +1,5 @@
 import { DocumentoNormativo } from '@/interfaces/normativa.interface'
+import Link from 'next/link';
 import React from 'react'
 import { FaDownload, FaEye } from 'react-icons/fa';
 interface Props {
@@ -25,10 +26,10 @@ export const ListNormativaItem = ({ document }: Props) => {
                     }
                 </article>
                 <div className='flex gap-4 mt-4'>
-                    <button className=' text-blue-400 px-4 flex gap-1'>
+                    <Link className=' text-blue-400 px-4 flex gap-1' href={`/normativas/${document.id}`}>
                         <FaEye className='mt-1' />
                         Ver
-                    </button>
+                    </Link>
                     <a className=' text-blue-400 px-4 flex gap-1'
                         href={document.attributes.archivo}
                         target="_blank"

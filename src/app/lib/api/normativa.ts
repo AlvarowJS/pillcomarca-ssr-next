@@ -25,3 +25,7 @@ export async function getNormativas(filters: NormativaFilters = {}): Promise<Doc
 export async function getTiposDoc(): Promise<TipoDeDocumento> {
   return await apiFetch('/v1/tipodedocumento');
 }
+
+export async function getNormativaId(id: string): Promise<DocumentoNormativoResponse> {
+  return await apiFetch(`/v1/documentonormativa/${id}`);
+}
