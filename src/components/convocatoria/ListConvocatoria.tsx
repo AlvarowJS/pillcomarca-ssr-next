@@ -20,9 +20,9 @@ export const ListConvocatoria = () => {
     }, [])
 
     return (
-        <div className='flex gap-4 flex-col'>
+        <div className='flex gap-4 flex-col mx-4 flex-wrap'>
             {
-                convocatorias?.map((convocatoria) => (
+                convocatorias?.slice().reverse().map((convocatoria) => (
                     <ItemConvocatoria
                         key={convocatoria.id}
                         convocatoria={convocatoria}

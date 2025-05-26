@@ -12,11 +12,13 @@ export const metadata: Metadata = {
 export default function ConvocatoriaPage() {
   return (
     <div>
-      <h2 className="text-gray-900 text-4xl font-bold mt-4">
-        Convocatoria de trabajo</h2>
-      <p>
-        Esta sección presenta el listado completo de las convocatorias de trabajo emitidas por la Municipalidad Distrital de Pillco Marca, disponibles para la postulación del público en general.
-      </p>
+      <div className="px-3 my-6">
+        <h2 className="text-gray-900 text-4xl font-bold mt-4">
+          Convocatoria de trabajo</h2>
+        <p>
+          Esta sección presenta el listado completo de las convocatorias de trabajo emitidas por la Municipalidad Distrital de Pillco Marca, disponibles para la postulación del público en general.
+        </p>
+      </div>
       <ListConvocatoria />
     </div>
   );
