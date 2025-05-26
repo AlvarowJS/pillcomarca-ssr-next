@@ -1,3 +1,4 @@
+import { ListDirectorio } from "@/components/directorio/ListDirectorio";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,14 +7,18 @@ export const metadata: Metadata = {
   keywords: ['Servicios', 'Mesa de partes',
     'Seguimiento de tramites', 'Municipalidad Distrital de Pillco Marca',
     'Pillco Marca', 'Contacto', 'Información institucional', 'Funcionarios públicos',
-    'Áreas municipales',"Telefono","Oficina","Areas","Funcionarios" 
+    'Áreas municipales', "Telefono", "Oficina", "Areas", "Funcionarios"
   ],
 };
 
 export default function DirectorioPage() {
   return (
     <div>
-      <h1>Directorio</h1>
+      <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">Directorio Institucional</h2>
+
+      <ListDirectorio
+
+      />
     </div>
   );
 }

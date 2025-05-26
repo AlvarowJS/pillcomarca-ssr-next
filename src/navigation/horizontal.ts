@@ -4,7 +4,7 @@ export const navItems: NavItem[] = [
     {
         path: '/institucion', text: 'Institución',
         submenus: [
-            { path: '/servicios', text: 'Servicios' },
+            // { path: '/servicios', text: 'Servicios' },
             { path: '/seguridad-ciudadana', text: 'Seguridad Ciudadana' },
             { path: '/mision-vision', text: 'Misión y Visión' },
             { path: '/fut', text: 'FUT' },

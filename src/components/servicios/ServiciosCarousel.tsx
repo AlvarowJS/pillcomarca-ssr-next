@@ -10,7 +10,7 @@ interface Servicio {
 
 export default function ServiciosCarousel() {
   const [startIndex, setStartIndex] = useState(0);
-  const [visibleItems, setVisibleItems] = useState(4);
+  const [visibleItems, setVisibleItems] = useState(6);
   const [isHovered, setIsHovered] = useState(false);
 
   const servicios: Servicio[] = [
@@ -28,7 +28,7 @@ export default function ServiciosCarousel() {
     const updateVisibleItems = () => {
       if (window.innerWidth < 640) setVisibleItems(2);
       else if (window.innerWidth < 1024) setVisibleItems(3);
-      else setVisibleItems(4);
+      else setVisibleItems(6);
     };
 
     updateVisibleItems();

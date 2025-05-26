@@ -4,3 +4,4 @@ export * from './social.interface';
 export * from './normativa.interface';
 export * from './convocatoria.interface';
 export * from './visitas.interface';
+export * from './portada.interface';
