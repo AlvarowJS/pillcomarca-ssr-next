@@ -28,7 +28,7 @@ export const Portada = () => {
             setCurrentIndex((prevIndex) => 
                 prevIndex === portadas.length - 1 ? 0 : prevIndex + 1
             );
-        }, 3000);
+        }, 5000);
 
         return () => clearInterval(interval);
     }, [portadas.length]);
@@ -54,9 +54,8 @@ export const Portada = () => {
     }
 
     return (
-        <div className="relative w-full max-w-4xl mx-auto overflow-hidden rounded-lg shadow-lg">
-            {/* Contenedor del carrusel */}
-            <div className="relative h-96">
+        <div className="relative w-full max-w-4xl mx-auto overflow-hidden">            
+            <div className="relative h-150">
                 {portadas.map((portada, index) => (
                     <div 
                         key={portada.id}

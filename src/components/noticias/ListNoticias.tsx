@@ -12,7 +12,8 @@ export const ListNoticias = () => {
     useEffect(() => {
         const fetchNoticias = async () => {
             try {
-                const data = await getNoticias({ page: currentPage })
+                const params = { page: currentPage }
+                const data = await getNoticias(params)
                 setNoticias(data.data)
                 setData(data)
             } catch (error) {
@@ -20,7 +21,7 @@ export const ListNoticias = () => {
             }
         }
         fetchNoticias()
-    }, [])
+    }, [currentPage])
 
     return (
         <div>

@@ -1,10 +1,29 @@
 import { getNormativaId } from "@/app/lib/api/normativa";
+import { Metadata } from "next";
 import Link from "next/link";
 import { FaBackspace } from "react-icons/fa";
 import { FaLeftLong } from "react-icons/fa6";
 
 interface Props {
     params: { id: string };
+}
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+
+    try {
+        const normativa = await getNormativaId(params.id);
+        const { id, nombre, Tipodedocumento } = normativa.data.attributes;
+
+        return {
+            title: `#${id}-${nombre}`,
+            description: `${nombre} - ${Tipodedocumento?.nombre}`,
+        }
+
+    } catch (error) {
+        return {
+            title: 'Normativa no encontrada',
+            description: 'Busca una normativa válida',
+        }
+    }
 }
 
 export default async function NormativaPage({ params }: Props) {

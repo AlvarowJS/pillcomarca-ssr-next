@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
@@ -57,13 +58,11 @@ export default function ServiciosCarousel() {
 
   return (
     <div 
-      className="w-full px-4 py-12 bg-gray-50"
+      className="w-full px-4 pb-12"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <h2 className="text-3xl font-bold text-sky-600 mb-8 text-center">
-        Servicios Municipales
-      </h2>
+      
 
       <div className="flex items-center justify-center gap-4">
         <button
@@ -77,7 +76,7 @@ export default function ServiciosCarousel() {
         <div className="flex-1 max-w-6xl overflow-hidden">
           <div className="flex justify-center gap-4 px-2 transition-transform duration-300">
             {getVisibleItems().map((servicio, index) => (
-              <a
+              <Link
                 key={`${servicio.nombre}-${index}`}
                 href={servicio.link}
                 target="_blank"
@@ -93,7 +92,7 @@ export default function ServiciosCarousel() {
                 <h3 className="text-sm font-semibold text-gray-800 text-center">
                   {servicio.nombre}
                 </h3>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

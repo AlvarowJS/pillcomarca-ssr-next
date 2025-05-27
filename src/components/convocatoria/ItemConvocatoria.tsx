@@ -15,7 +15,7 @@ export const ItemConvocatoria = ({ convocatoria }: Props) => {
     return (
         <div className="bg-white shadow-md rounded-2xl p-6 mb-6 border border-gray-200">
             <div className='flex justify-between flex-col'>
-                <div className="mb-4 flex justify-between">
+                <div className="mb-4 flex justify-between flex-wrap">
                     <div>
                         <h3 className="text-xl font-bold text-gray-800">{convocatoria.nombre}</h3>
                         <p className="text-sm text-gray-500">{new Date(convocatoria.created_at).toLocaleDateString()}</p>

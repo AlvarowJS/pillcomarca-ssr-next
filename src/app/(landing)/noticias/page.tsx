@@ -19,9 +19,7 @@ export default function NoticiasPage() {
       <div>
         <ListNoticias />
       </div>
-      <h2>
-        Mas noticias
-      </h2>
+
     </div>
   );
 }

@@ -26,7 +26,7 @@ export const Navbar = () => {
                 <Link href="/" className="flex items-center">
                     <Image src="/images/logos/logo.png" alt="Logo de la municipalidad distrital de pillco marca" width={240} height={70} className="mt-2 mr-10" />
                 </Link>
-                <div className="hidden lg:flex items-center space-x-4 gap-3">
+                <div className="hidden lg:flex items-center space-x-4 gap-3 z-10">
                     {navItems.map((item) => (
                         <NavbarItem
                             key={item.path}

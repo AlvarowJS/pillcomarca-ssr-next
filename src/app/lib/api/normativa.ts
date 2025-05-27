@@ -11,6 +11,7 @@ interface NormativaFilters {
 
 export async function getNormativas(filters: NormativaFilters = {}): Promise<DocumentoNormativoResponse> {
   
+  console.log("entro?")
   const params = new URLSearchParams();
 
   if (filters.year) params.append("year", filters.year.toString());

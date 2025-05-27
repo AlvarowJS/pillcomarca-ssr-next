@@ -48,7 +48,7 @@ export default function OrganigramaPage() {
         <div className="col-span-1 md:col-span-3">
           <iframe
             src="/documents/Organigrama.pdf"
-            className="w-full h-[500px] rounded border border-gray-500 shadow"
+            className="w-full h-[800px] rounded border border-gray-500 shadow"
             title="Organigrama"
           ></iframe>
         </div>

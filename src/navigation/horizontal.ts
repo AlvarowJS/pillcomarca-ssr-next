@@ -22,7 +22,8 @@ export const navItems: NavItem[] = [
         submenus: [
             { path: '/documentos', text: 'Documentos de Gestión' },
             { path: '/normativas', text: 'Normativa' },
-            { path: '/saldos-balance', text: 'Saldos de Balance' }
+            { path: '/saldos-balance', text: 'Saldos de Balance' },
+            { path: '/presupuesto-participativo', text: 'Presupuesto Participativo' }
         ]
     },
     { path: '/noticias', text: 'Noticias' },

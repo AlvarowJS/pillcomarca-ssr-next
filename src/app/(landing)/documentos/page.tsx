@@ -15,7 +15,7 @@ export default async function DocumentosPage() {
     const gestions = await getDocumentosGestion();
 
     return (
-        <aside className="text-center mt-4">
+        <aside className="text-center my-8">
             <h2 className="text-gray-900 text-4xl font-bold">
                 Documentos de Gestión
             </h2>

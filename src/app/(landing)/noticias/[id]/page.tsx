@@ -1,7 +1,27 @@
 import { getNoticiaId } from "@/app/lib/api/noticia";
+import { Metadata } from "next";
+import Link from "next/link";
 
 interface Props {
     params: { id: string };
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+
+    try {
+        const { id, titulo } = await getNoticiaId(params.id);
+
+        return {
+            title: `#${id}-${titulo}`,
+            description: titulo
+        }
+
+    } catch (error) {
+        return {
+            title: 'Normativa no encontrada',
+            description: 'Busca una normativa válida',
+        }
+    }
 }
 
 export default async function NoticiaPage({ params }: Props) {
@@ -9,6 +29,13 @@ export default async function NoticiaPage({ params }: Props) {
 
     return (
         <div className="max-w-6xl mx-auto px-4 py-8">
+            <Link
+                href="/noticias"
+                className="text-blue-500 hover:underline mb-4 inline-block"
+                aria-label="Volver a Noticias"
+            >
+                &larr; Volver a Noticias
+            </Link>
             <h3 className="text-3xl font-bold mb-6 text-blue-400">{noticia.titulo}</h3>
 
             <div className="flex flex-col md:flex-row gap-6 bg-white shadow-lg rounded-xl p-6">
@@ -29,12 +56,13 @@ export default async function NoticiaPage({ params }: Props) {
                     <p className="text-gray-700 text-base leading-relaxed">
                         {noticia.nota}
                     </p>
-                </div>
-                <div className="w-1/3 sm:w-1/2">
-                    <div
-                        dangerouslySetInnerHTML={{ __html: noticia.referencia }}
-                    />
-                </div>
+                </div>                
+                    <div className="w-full max-w-full overflow-x-auto">
+
+                        <div
+                            dangerouslySetInnerHTML={{ __html: noticia.referencia }}
+                        />
+                    </div>                
             </div>
         </div>
     );

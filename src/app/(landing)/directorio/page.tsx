@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function DirectorioPage() {
   return (
-    <div>
+    <div className="p-4 md:p-6 lg:p-8">
       <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">Directorio Institucional</h2>
 
       <ListDirectorio
