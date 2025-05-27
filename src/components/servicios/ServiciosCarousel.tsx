@@ -1,11 +1,16 @@
 'use client';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight, FaPeopleGroup } from 'react-icons/fa6';
+import { GoMail } from "react-icons/go";
+import { TfiWorld } from "react-icons/tfi";
+import { IoShieldCheckmarkSharp, IoDocumentTextSharp } from "react-icons/io5";
+import { GiOpenBook } from "react-icons/gi";
+import { AiOutlineLaptop, AiOutlineFileSearch } from "react-icons/ai";
 
 interface Servicio {
   nombre: string;
-  icono: string;
+  icono: React.ReactNode;
   link: string;
 }
 
@@ -15,14 +20,14 @@ export default function ServiciosCarousel() {
   const [isHovered, setIsHovered] = useState(false);
 
   const servicios: Servicio[] = [
-    { nombre: 'Seguimiento de Trámite', icono: '/servicios/seguimiento.svg', link: 'http://165.22.34.176/tramite/seguimiento' },
-    { nombre: 'Trámite Documentario', icono: '/servicios/documento.svg', link: 'http://165.22.34.176/login' },
-    { nombre: 'Mesa de Partes Virtual', icono: '/servicios/mesapartes.svg', link: '/mesa-partes' },
-    { nombre: 'Seguridad Ciudadana', icono: '/servicios/seguridad.svg', link: '/seguridad-ciudadana' },
-    { nombre: 'Correo Institucional', icono: '/servicios/correo.svg', link: 'https://munipillcomarca.gob.pe:2096' },
-    { nombre: 'Libro de Reclamaciones', icono: '/servicios/libro.svg', link: 'https://reclamos.servicios.gob.pe/?institution_id=3654' },
-    { nombre: 'INTRANET', icono: '/servicios/mundo.svg', link: 'https://intranet.munipillcomarca.gob.pe/tickets' },
-    { nombre: 'PRESUPUESTO', icono: '/servicios/presupuesto.svg', link: '/presupuesto-participativo' },
+    { nombre: 'Seguimiento de Trámite', icono: <AiOutlineFileSearch size={50} />, link: 'http://165.22.34.176/tramite/seguimiento' },
+    { nombre: 'Trámite Documentario', icono: <IoDocumentTextSharp size={50} />, link: 'http://165.22.34.176/login' },
+    { nombre: 'Mesa de Partes Virtual', icono: <AiOutlineLaptop size={50} />, link: '/mesa-partes' },
+    { nombre: 'Seguridad Ciudadana', icono: <IoShieldCheckmarkSharp size={50} />, link: '/seguridad-ciudadana' },
+    { nombre: 'Correo Institucional', icono: <GoMail size={50} />, link: 'https://munipillcomarca.gob.pe:2096' },
+    { nombre: 'Libro de Reclamaciones', icono: <GiOpenBook size={50} />, link: 'https://reclamos.servicios.gob.pe/?institution_id=3654' },
+    { nombre: 'INTRANET', icono: <TfiWorld size={50} />, link: 'https://intranet.munipillcomarca.gob.pe/tickets' },
+    { nombre: 'Presupuesto Participativo', icono: <FaPeopleGroup size={50} />, link: '/presupuesto-participativo' },
   ];
 
   useEffect(() => {
@@ -62,8 +67,6 @@ export default function ServiciosCarousel() {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      
-
       <div className="flex items-center justify-center gap-4">
         <button
           onClick={prev}
@@ -84,11 +87,9 @@ export default function ServiciosCarousel() {
                 className="flex flex-col items-center p-4 rounded-xl hover:bg-sky-50 transition-all 
                           min-w-[150px] max-w-[200px] hover:shadow-md hover:-translate-y-1"
               >
-                <img 
-                  src={servicio.icono} 
-                  alt={`Icono de ${servicio.nombre}`} 
-                  className="w-14 h-14 mb-3"
-                />
+                <div className="w-14 h-14 mb-3 flex items-center justify-center text-sky-700">
+                  {servicio.icono}
+                </div>
                 <h3 className="text-sm font-semibold text-gray-800 text-center">
                   {servicio.nombre}
                 </h3>
