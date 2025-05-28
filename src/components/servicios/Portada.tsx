@@ -12,7 +12,7 @@ export const Portada = () => {
         const fetchPortadas = async () => {
             try {
                 const data = await getPortadas()
-                setPortadas(data);
+                setPortadas([data]);
             } catch (error) {
                 console.error('Error fetching portadas:', error);
             }

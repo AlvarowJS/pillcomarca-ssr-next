@@ -3,8 +3,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { FaLeftLong } from "react-icons/fa6";
 
-interface Props {
-    params: { id: string };
+type Props = {
+    params: Promise<{ id: string }>
+
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -39,7 +40,7 @@ export default async function NormativaPage({ params }: Props) {
                 <FaLeftLong />
                 Volver
             </Link>
-            <h2 className="text-2xl font-semibold text-gray-800">{nombre}</h2>        
+            <h2 className="text-2xl font-semibold text-gray-800">{nombre}</h2>
             <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
                 <span className="px-3 py-1 bg-gray-100 rounded-full">
                     Tipo: {Tipodedocumento?.nombre}

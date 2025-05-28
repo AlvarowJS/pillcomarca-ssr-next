@@ -3,8 +3,9 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-interface Props {
-    params: { id: string };
+type Props = {
+    params: Promise<{ id: string }>
+
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

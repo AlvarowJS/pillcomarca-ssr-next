@@ -9,7 +9,7 @@ import { Pagination } from './Pagination';
 
 export const Normativa = () => {
     const [filters, setFilters] = useState({});
-    const [tipos, setTipos] = useState<TipoDeDocumento>()
+    const [tipos, setTipos] = useState<TipoDeDocumento[]>()
     const [documents, setDocuments] = useState<DocumentoNormativo[]>([]);
     const [data, setData] = useState<DocumentoNormativoResponse>()
     const [currentPage, setCurrentPage] = useState(1);
@@ -18,7 +18,7 @@ export const Normativa = () => {
         const fetchTiposDocumentos = async () => {
             try {
                 const data = await getTiposDoc();
-                setTipos(data);
+                setTipos([data]);
             } catch (error) {
                 console.log("Error", error)
             }
