@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'sv-yptplguxwm.cloud.elastika.pe'
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.www.gob.pe'
       }
     ]
   }

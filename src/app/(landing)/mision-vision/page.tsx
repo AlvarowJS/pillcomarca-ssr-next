@@ -19,7 +19,7 @@ export default function MisionVisionPage() {
             </svg>
             <h2 className="text-xl md:text-2xl lg:text-3xl font-bold">Misión Distrital</h2>
           </div>
-          <p className="text-sm md:text-base lg:text-lg">"Promover el desarrollo inclusivo, integral y sostenible del distrito de Pillco Marca, con capacidad de gestión y servicios públicos de calidad, de una manera eficiente, transparente, integradora y responsable"</p>
+          <p className="text-sm md:text-base lg:text-lg">&quot;Promover el desarrollo inclusivo, integral y sostenible del distrito de Pillco Marca, con capacidad de gestión y servicios públicos de calidad, de una manera eficiente, transparente, integradora y responsable&quot;</p>
         </div>
 
         <div className="bg-cyan-600 text-white p-5 md:p-6 lg:p-8 rounded-xl shadow-md flex flex-col">
@@ -30,7 +30,7 @@ export default function MisionVisionPage() {
             </svg>
             <h2 className="text-xl md:text-2xl lg:text-3xl font-bold">Visión Distrital</h2>
           </div>
-          <p className="text-sm md:text-base lg:text-lg">"Pillco Marca distrito competitivo, promotor, ordenado, ecológico, turístico, moderno, seguro y solidario con calidad de vida, donde se conserva, respeta y se fomenta la cultura, los valores, la transparencia y la participación ciudadana"</p>
+          <p className="text-sm md:text-base lg:text-lg">&quot;Pillco Marca distrito competitivo, promotor, ordenado, ecológico, turístico, moderno, seguro y solidario con calidad de vida, donde se conserva, respeta y se fomenta la cultura, los valores, la transparencia y la participación ciudadana&quot;</p>
         </div>
       </div>
 

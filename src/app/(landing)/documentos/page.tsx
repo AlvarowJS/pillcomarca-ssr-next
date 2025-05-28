@@ -1,6 +1,5 @@
 import { getDocumentosGestion } from "@/app/lib/api/documentos";
 import { DocumentGrid } from "@/components";
-import { Gestion } from "@/interfaces";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

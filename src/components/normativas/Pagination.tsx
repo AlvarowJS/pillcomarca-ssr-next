@@ -23,7 +23,7 @@ export const Pagination = ({
         const maxVisible = 5; // Máximo de páginas visibles en la paginación
         
         let start = Math.max(1, currentPage - Math.floor(maxVisible / 2));
-        let end = Math.min(totalPages, start + maxVisible - 1);
+        const end = Math.min(totalPages, start + maxVisible - 1);
         
         // Ajustar si no estamos mostrando suficientes páginas
         if (end - start + 1 < maxVisible) {

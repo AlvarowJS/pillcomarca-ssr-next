@@ -1,4 +1,5 @@
 import { Noticia } from '@/interfaces/noticia.interface'
+import Image from 'next/image';
 import Link from 'next/link';
 interface Props {
     noticia: Noticia;
@@ -10,9 +11,10 @@ export const NoticiaItem = ({ noticia }: Props) => {
                 key={noticia.id}
                 href={`noticias/${noticia.id}`}                
             >
-                <img src={noticia.noticia_imagenes[0].imagen} alt={noticia.titulo}
+                <Image src={noticia.noticia_imagenes[0].imagen} alt={noticia.titulo}
                     className='h-48 w-96 sm:w-100 s object-cover'
-
+                    width={400}
+                    height={300}
                 />
             </Link>
             <div className='p-4'>

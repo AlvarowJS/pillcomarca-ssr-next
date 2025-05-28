@@ -1,3 +1,14 @@
+export interface DocumentoNormativoResponseId {
+  data: {
+    type: string;
+    id: string;
+    attributes: DocumentoAttributes;
+    links: {
+      self: string;
+    };
+  };
+}
+
 export interface DocumentoNormativoResponse {
     data: DocumentoNormativo[];
     links: {

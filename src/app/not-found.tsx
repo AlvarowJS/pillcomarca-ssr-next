@@ -2,9 +2,8 @@
 import Link from "next/link";
 import { useEffect } from "react";
 
-export default function NotFound({ error, reset }: {
-    error: Error,
-    reset: () => void
+export default function NotFound({ error }: {
+    error: Error
 }) {
 
     useEffect(() => {

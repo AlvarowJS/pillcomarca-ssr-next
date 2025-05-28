@@ -1,12 +1,11 @@
 'use client';
 import { getSeguridad } from '@/app/lib/api/seguridad';
 import { SeguridadCategoria } from '@/interfaces/seguridad.interface'
-import React, { use, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ListSeguridadItem } from './ListSeguridadItem';
 
 
 export const ListSeguridad = () => {
-    const [currentPage, setCurrentPage] = useState(1);
     const [data, setData] = useState<SeguridadCategoria[]>()
 
     useEffect(() => {
@@ -23,7 +22,6 @@ export const ListSeguridad = () => {
 
     return (
         <div>
-            {/* {data?.categoria} */}
             {
                 data?.map((categoria) => (
                     <ListSeguridadItem 

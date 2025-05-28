@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { RegistroVisitasResponse, Visita } from '@/interfaces';
+import { RegistroVisitasResponse } from '@/interfaces';
 import { ListVisitaItem } from './ListVisitasItem';
 import { getVisitas } from '@/app/lib/api/visitas';
 import { Pagination } from '../normativas/Pagination';

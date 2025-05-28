@@ -2,8 +2,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaFacebook, FaTiktok } from "react-icons/fa";
-import { GrInstagram } from "react-icons/gr";
 import { IoMenu } from "react-icons/io5";
 import { navItems } from '@/navigation';
 import { NavbarItem } from './NavbarItem';

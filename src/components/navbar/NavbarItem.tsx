@@ -2,7 +2,6 @@
 import React, { useEffect, useRef } from 'react'
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { navItems } from '@/navigation';
 import { NavItem } from '@/interfaces';
 import { FaAngleDown } from "react-icons/fa";
 

@@ -1,10 +1,16 @@
 import { TipoDeDocumento } from "@/interfaces";
 import { useState } from "react";
 
+interface FilterProps {
+  tipodedocumento_id?: string;
+  year?: string;
+  nombre?: string;
+  page?: string;
+}
 interface Props {
   tipos: TipoDeDocumento[] | undefined;
-  setFilters: React.Dispatch<React.SetStateAction<any>>;
-  setCurrentPage: React.Dispatch<React.SetStateAction<any>>;
+  setFilters: React.Dispatch<React.SetStateAction<FilterProps>>;
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export const SearchNormativa = ({ tipos, setFilters, setCurrentPage }: Props) => {

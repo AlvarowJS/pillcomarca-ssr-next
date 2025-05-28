@@ -1,6 +1,6 @@
 // lib/api/normativas.ts
 import { apiFetch } from "../http";
-import { DocumentoNormativoResponse, TipoDeDocumento } from "@/interfaces";
+import { DocumentoNormativoResponse, DocumentoNormativoResponseId, TipoDeDocumento } from "@/interfaces";
 
 interface NormativaFilters {
   year?: number;
@@ -11,7 +11,6 @@ interface NormativaFilters {
 
 export async function getNormativas(filters: NormativaFilters = {}): Promise<DocumentoNormativoResponse> {
   
-  console.log("entro?")
   const params = new URLSearchParams();
 
   if (filters.year) params.append("year", filters.year.toString());
@@ -27,6 +26,6 @@ export async function getTiposDoc(): Promise<TipoDeDocumento> {
   return await apiFetch('/v1/tipodedocumento');
 }
 
-export async function getNormativaId(id: string): Promise<DocumentoNormativoResponse> {
+export async function getNormativaId(id: string): Promise<DocumentoNormativoResponseId> {
   return await apiFetch(`/v1/documentonormativa/${id}`);
 }

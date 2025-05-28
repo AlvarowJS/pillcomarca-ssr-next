@@ -44,9 +44,11 @@ export default function ServiciosCarousel() {
 
   useEffect(() => {
     if (isHovered) return;
-    const timer = setInterval(() => next(), 5000);
+    const timer = setInterval(() => {
+      setStartIndex(prev => (prev + visibleItems) % servicios.length);
+    }, 5000);
     return () => clearInterval(timer);
-  }, [isHovered, startIndex, visibleItems]);
+  }, [isHovered, visibleItems, servicios.length]);
 
   const next = () => setStartIndex(prev => (prev + visibleItems) % servicios.length);
   const prev = () => setStartIndex(prev => (prev - visibleItems + servicios.length) % servicios.length);
@@ -62,7 +64,7 @@ export default function ServiciosCarousel() {
   };
 
   return (
-    <div 
+    <div
       className="w-full px-4 pb-12"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -112,9 +114,8 @@ export default function ServiciosCarousel() {
           <button
             key={i}
             onClick={() => goToSlide(i * visibleItems)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              i === Math.floor(startIndex / visibleItems) ? 'bg-sky-600 w-6' : 'bg-gray-300'
-            }`}
+            className={`w-3 h-3 rounded-full transition-all ${i === Math.floor(startIndex / visibleItems) ? 'bg-sky-600 w-6' : 'bg-gray-300'
+              }`}
             aria-label={`Ir al grupo ${i + 1}`}
           />
         ))}

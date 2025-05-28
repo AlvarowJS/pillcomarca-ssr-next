@@ -9,7 +9,6 @@ import { Pagination } from './Pagination';
 
 export const Normativa = () => {
     const [filters, setFilters] = useState({});
-    const [total, setTotal] = useState()
     const [tipos, setTipos] = useState<TipoDeDocumento>()
     const [documents, setDocuments] = useState<DocumentoNormativo[]>([]);
     const [data, setData] = useState<DocumentoNormativoResponse>()
@@ -21,7 +20,7 @@ export const Normativa = () => {
                 const data = await getTiposDoc();
                 setTipos(data);
             } catch (error) {
-                console.log("Error")
+                console.log("Error", error)
             }
         }
         fetchTiposDocumentos()
@@ -32,7 +31,6 @@ export const Normativa = () => {
             try {
                 const params = { ...filters, page: currentPage }
                 const data = await getNormativas(params);
-                setTotal(data.links.pagination.total);
                 setDocuments(data.data);
                 setData(data)
             } catch (error) {
@@ -54,7 +52,6 @@ export const Normativa = () => {
 
             </div>
             <div className="md:col-span-9 md:overflow-y-auto md:h-full">
-                {/* <p className='px-4 my-4'>Total: {total} Elementos encontrados</p> */}
                 {data && (
                     <Pagination
                         currentPage={data.meta.current_page}

@@ -1,33 +1,35 @@
 import { getNormativaId } from "@/app/lib/api/normativa";
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaBackspace } from "react-icons/fa";
 import { FaLeftLong } from "react-icons/fa6";
 
 interface Props {
     params: { id: string };
 }
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { id } = await params
     try {
-        const normativa = await getNormativaId(params.id);
-        const { id, nombre, Tipodedocumento } = normativa.data.attributes;
+        const normativa = await getNormativaId(id);
+        const { nombre, Tipodedocumento } = normativa.data.attributes;
 
         return {
-            title: `#${id}-${nombre}`,
+            title: `${nombre}`,
             description: `${nombre} - ${Tipodedocumento?.nombre}`,
         }
 
     } catch (error) {
         return {
             title: 'Normativa no encontrada',
-            description: 'Busca una normativa válida',
+            description: `Busca una normativa válida ${error}`,
         }
     }
 }
 
 export default async function NormativaPage({ params }: Props) {
-    const normativa = await getNormativaId(params.id);
+    const { id } = await params
+
+    const normativa = await getNormativaId(id);
 
     const { nombre, descripcion, archivo, fecha, Tipodedocumento } = normativa.data.attributes;
 
@@ -37,8 +39,7 @@ export default async function NormativaPage({ params }: Props) {
                 <FaLeftLong />
                 Volver
             </Link>
-            <h1 className="text-2xl font-semibold text-gray-800">{nombre}</h1>
-
+            <h2 className="text-2xl font-semibold text-gray-800">{nombre}</h2>        
             <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
                 <span className="px-3 py-1 bg-gray-100 rounded-full">
                     Tipo: {Tipodedocumento?.nombre}

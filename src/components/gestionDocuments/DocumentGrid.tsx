@@ -1,6 +1,5 @@
 import { Gestion } from '@/interfaces'
 import { DocumentGridItem } from './DocumentGridItem'
-import { DocumentPrueba } from './DocumentPrueba'
 
 interface Props {
     gestions: Gestion[]

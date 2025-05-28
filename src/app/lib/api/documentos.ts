@@ -1,5 +1,4 @@
 import { Gestion } from '@/interfaces';
-import { apiFetch } from '../http';
 
 export const getDocumentosGestion = async (): Promise<Gestion[]> => {
     const response = await fetch(`https://sv-yptplguxwm.cloud.elastika.pe/api/v1/gestion`, {

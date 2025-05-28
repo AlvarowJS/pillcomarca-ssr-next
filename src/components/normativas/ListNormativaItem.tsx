@@ -15,6 +15,7 @@ export const ListNormativaItem = ({ document }: Props) => {
                     </div>
                     <div className="bg-blue-500 text-white py-2 px-4 rounded-4xl">
                         {document.attributes.Tipodedocumento.nombre}
+                        <br />
                     </div>
                 </div>
                 <h4 className='text-gray-900 font-bold mt-4'>

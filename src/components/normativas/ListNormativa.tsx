@@ -1,4 +1,4 @@
-import { DocumentoNormativo, DocumentoNormativoResponse } from '@/interfaces/normativa.interface';
+import { DocumentoNormativo } from '@/interfaces/normativa.interface';
 import React from 'react'
 import { ListNormativaItem } from './ListNormativaItem';
 
