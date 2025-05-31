@@ -13,7 +13,7 @@ export const ListConvocatoria = () => {
                 const data = await getConvocatoria();                
                 setConvocatorias([data])
             } catch (error) {
-                console.log(error)
+                console.error(error)
             }
         }
         fetchConvocatoria()

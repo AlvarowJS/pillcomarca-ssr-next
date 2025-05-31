@@ -20,7 +20,7 @@ export const Normativa = () => {
                 const data = await getTiposDoc();
                 setTipos([data]);
             } catch (error) {
-                console.log("Error", error)
+                console.error("Error", error)
             }
         }
         fetchTiposDocumentos()
