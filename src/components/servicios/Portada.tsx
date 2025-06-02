@@ -12,7 +12,7 @@ export const Portada = () => {
         const fetchPortadas = async () => {
             try {
                 const data = await getPortadas()
-                setPortadas([data]);
+                setPortadas(data);
             } catch (error) {
                 console.error('Error fetching portadas:', error);
             }
@@ -55,10 +55,10 @@ export const Portada = () => {
 
     return (
         <div className="relative w-full max-w-4xl mx-auto overflow-hidden">            
-            <div className="relative h-150">
+            <div className="relative h-100">
                 {portadas.map((portada, index) => (
                     <div 
-                        key={portada.id}
+                        key={index}
                         className={`absolute inset-0 transition-opacity duration-700 ${index === currentIndex ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                     >
                         {portada.foto && (

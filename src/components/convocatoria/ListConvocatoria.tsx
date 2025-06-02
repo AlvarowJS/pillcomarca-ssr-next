@@ -11,7 +11,7 @@ export const ListConvocatoria = () => {
         const fetchConvocatoria = async () => {
             try {
                 const data = await getConvocatoria();                
-                setConvocatorias([data])
+                setConvocatorias(data)
             } catch (error) {
                 console.error(error)
             }
