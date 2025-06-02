@@ -16,16 +16,17 @@ export default function HistoriaPage() {
 
       <div className="">
       
-      <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8 p-4">
-  
+      <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
+      <div className="container mx-auto p-4 ">
+      <div className="flex flex-col lg:flex-row flex-wrap items-center">
         {/* Contenedor de Imagen - Lado Izquierdo */}
         <div className="w-full lg:w-1/2">
           <img
            src="/images/logos/muniantigua.jpg"
            alt="Historia de Pillco Marca"
            className="w-full h-auto rounded-lg shadow-md object-cover max-h-[500px]"
-     />
-  </div>
+          />
+        </div>
 
        {/* Contenedor de Texto - Lado Derecho */}
        <div className="w-full lg:w-1/2 lg:pl-6">
@@ -33,35 +34,36 @@ export default function HistoriaPage() {
          HISTORIA Y CREACIÓN DEL DISTRITO DE PILLCO MARCA
         </h2>
     <div className="space-y-4">
-      <p className="text-gray-700 text-justify text-base md:text-lg">
+      <p className="text-gray-700 text-base md:text-lg text-justify">
         Los territorios de Cayhuayna, Marabamba, Andabamba, Vichaycoto y otros lugares que formaban parte del Pillco Mayo, (Janan pillco) hoy conocido como el valle del Huallaga, durante el periodo colonial español se convirtieron en tierras bajo el dominio de los españoles.
         </p>
-      <p className="text-gray-700 text-justify text-base md:text-lg">
+      <p className="text-gray-700 text-base md:text-lg text-justify">
         Estas tierras fueron distribuidas como Encomiendas por los españoles. Según José Vara Llanos en Historia de Huánuco, el primer encomendero fue Gómez Arias Dávila, conquistador que participó en la fundación de Huánuco, por lo que las tierras de Cayhuayna le fueron concedidas por la corona española en 1549. Posteriormente, pasaron a manos de Martín Alfonso de Mercadillo, medio hermano de Francisco Pizarro.</p>
     </div>
+    </div>
   </div>
-
+   </div> 
       </div>
         <div className="container mx-auto p-4">
-          <p className="text-gray-700 mb-4 md:text-lg text-justify">
+          <p className="text-gray-700 text-base md:text-lg text-justify">
             El territorio que actualmente ocupa Cayhuayna, el Janan Pillco del Ichog Pillco Mayo, en épocas precolombinas pertenecieron al grupo étnico nativo los Mazgos y el Rurin Pillco estaban ocupados por los Chupachos.
           </p>
-          <p className="text-gray-700 mb-4 md:text-lg text-justify">
+          <p className="text-gray-700 text-base md:text-lg text-justify">
             Gómez Arias Dávila habría sido el primer encomendero que ocupó el repartimiento de Chupachos, así pues, Gómez Arias Dávila era el encomendero del valle de Huallaga, según el Titulo otorgado por el Virrey Conde de Nieva por provisión del 1 de setiembre de 1548 que le otorgó la encomienda de los Chupachos que inicialmente perteneció a Martín de Alcántara. Gómez Arias Dávila muere en la ciudad de Huánuco el 30 de Julio de 1562, sus restos según Vara llanos yace en la Iglesia de San Francisco, donde está sepultado.
           </p>
         </div>
-      <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8 p-4">
-
-
+      <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8 ">
+      <div className="container mx-auto p-4">
+      <div className="flex flex-col lg:flex-row flex-wrap items-center">
        {/* Contenedor de Texto - Lado Derecho */}
       <div className="w-full lg:w-1/2 ">
       
-        <div className="space-y-4">
-          <p className="text-gray-700 text-justify text-base md:text-lg">
+        <div className="space-y-4 pr-6">
+          <p className="text-gray-700 text-base md:text-lg text-justify">
           Tras la muerte de Gómez Arias Dávila, Cayhuayna pasó por varios dueños, incluyendo a Ricardo Dávila Martel y Bernardo Quiroz. El 5 de enero de 1563, el Conde de Nieva designó como heredero a Juan Arias Dávila (hijo menor de Gómez), bajo la tutela de su madre, María Castellón y de Lara, quien gestionó su reconocimiento como encomendero de los Chupachos, tomando posesión el 1 de marzo de 1563. Posteriormente, en 1646, las tierras fueron vendidas por un hermano de Diego de las Casas a Francisco Fernández de García, quien se convirtió en dueño de las chacras de Cayhuayna, cerca de Huánuco.
           </p>
         
-        </div>
+        </div> 
         </div>
         <div className="w-full lg:w-1/2">
           <img
@@ -69,7 +71,8 @@ export default function HistoriaPage() {
            alt="Historia de Pillco Marca"
            className="w-full h-auto rounded-lg shadow-md object-cover max-h-[500px]"/>
         </div>
-
+      </div>
+      </div>
       </div>
       <div className="container mx-auto p-4">
           <p className="text-gray-700 mb-4 md:text-lg text-justify">
@@ -93,7 +96,7 @@ La Cooperativa de Cayhuayna, territorialmente estaba conformado por 4 parcelas d
 Asimismo, estaban inmerso en esta Cooperativa los predios de Huancachupa y Pitumama con 615 Hectáreas, igualmente conformaban Colpa Alta y Chicchuy. La cooperativa tuvo vigencia por un lapso de 14 años hasta el año de 1989 a partir de este año, las cooperativas acuerdan parcelarse las tierras quedando parcelada dicha Cooperativa.
           </p>
         </div>
-        <div className="container w-full">
+        <div className="container mx-auto p-4">
           <img
            src="/images/logos/muniactual.jpg"
            alt="Historia de Pillco Marca"
