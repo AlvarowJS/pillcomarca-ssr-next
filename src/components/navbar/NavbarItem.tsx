@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { NavItem } from '@/interfaces';
@@ -32,29 +32,54 @@ export const NavbarItem = ({ item, openMenu, setOpenMenu }: Props) => {
         };
     }, [isOpen, setOpenMenu]);
 
+    const baseClasses = 'px-4 py-2 font-medium transition cursor-pointer';
+    const hoverUnderline = 'hover:border-b-4 hover:border-blue-600 hover:text-blue-600';
+    const activeUnderline = 'border-b-4 border-blue-600 text-blue-600 font-semibold';
+
+    // Función para verificar si el ítem o alguno de sus submenús está activo
+    const isItemActive = (navItem: NavItem): boolean => {
+        if (navItem.path && currentPath === navItem.path) return true;
+        if (navItem.submenus) {
+            return navItem.submenus.some(sub => currentPath === sub.path);
+        }
+        return false;
+    };
+
+    const isActive = isItemActive(item);
+
     if (item.submenus) {
         return (
-            <div ref={menuRef} className="relative">
+            <div ref={menuRef} className="relative group">
                 <button
                     onClick={() => setOpenMenu(isOpen ? null : item.text)}
-                    className="flex items-center text-black"
+                    className={`${baseClasses} ${hoverUnderline} flex items-center gap-1 ${
+                        isActive ? activeUnderline : 'text-gray-800 border-b-4 border-transparent'
+                    }`}
                 >
                     {item.text}
-                    <FaAngleDown className={`ml-1 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+                    <FaAngleDown className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
                 </button>
 
                 {isOpen && (
-                    <div className="absolute bg-white shadow-lg w-48 mt-2 rounded z-50">
-                        {item.submenus.map((sub) => (
-                            <Link
-                                key={sub.path}
-                                href={sub.path}
-                                className="block px-4 py-2 text-black hover:bg-sky-400"
-                                onClick={() => setOpenMenu(null)}
-                            >
-                                {sub.text}
-                            </Link>
-                        ))}
+                    <div className="absolute left-0 mt-2 w-48 bg-white shadow-md rounded-md z-50 overflow-hidden border border-gray-100">
+                        {item.submenus.map((sub) => {
+                            const isSubActive = currentPath === sub.path;
+                            
+                            return (
+                                <Link
+                                    key={sub.path}
+                                    href={sub.path}
+                                    className={`${baseClasses} block ${
+                                        isSubActive 
+                                            ? activeUnderline 
+                                            : 'text-gray-700 hover:border-b-4 hover:border-blue-600 hover:text-blue-600'
+                                    }`}
+                                    onClick={() => setOpenMenu(null)}
+                                >
+                                    {sub.text}
+                                </Link>
+                            );
+                        })}
                     </div>
                 )}
             </div>
@@ -64,8 +89,8 @@ export const NavbarItem = ({ item, openMenu, setOpenMenu }: Props) => {
     return (
         <Link
             href={item.path}
-            className={`text-black px-4 py-2 hover:text-blue-600 ${
-                currentPath === item.path ? 'font-bold text-blue-600' : ''
+            className={`${baseClasses} ${hoverUnderline} ${
+                isActive ? activeUnderline : 'text-gray-800 border-b-4 border-transparent'
             }`}
         >
             {item.text}
