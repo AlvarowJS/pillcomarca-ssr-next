@@ -1,6 +1,8 @@
 import { Noticia } from '@/interfaces/noticia.interface'
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaArrowRight } from 'react-icons/fa';
+
 interface Props {
     noticia: Noticia;
 }
@@ -24,13 +26,13 @@ export const NoticiaItem = ({ noticia }: Props) => {
                 <p className='my-4 line-clamp-3'>
                     {noticia.nota}
                 </p>
-
                 <Link
-                    key={noticia.id}
-                    href={`noticias/${noticia.id}`}
-                    className="block px-4 py-2 text-black hover:text-sky-400"
+                key={noticia.id}
+                href={`noticias/${noticia.id}`}
+                className="inline-flex items-center px-4 py-2 mt-2 text-sm font-medium text-white bg-sky-600 rounded-full hover:bg-sky-700 transition-all"
                 >
-                    Leer Mas
+                Leer más
+                <FaArrowRight className="ml-2 w-4 h-4" />
                 </Link>
             </div>
         </div>
