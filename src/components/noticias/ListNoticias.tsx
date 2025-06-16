@@ -31,6 +31,7 @@ export const ListNoticias = () => {
                         <NoticiaItem
                             key={noticia.id}
                             noticia={noticia}
+                            
                         />
                     ))
                 }
