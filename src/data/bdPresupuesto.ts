@@ -1,6 +1,22 @@
 export const bdPresupuesto = [
     {
         id: 1,
+        titulo: 'Presupuesto Participativo 2026',
+        fecha: '2025-06-15',
+        year: 2026,
+        anexos: [
+          
+        ],
+        informes: [
+            {
+                id: 1,
+                nombre: 'Informe de Resultados del Presupuesto Participativo 2026',
+                archivo: 'https://www.gob.pe/institucion/munipillcomarca/informes-publicaciones/6761479-informe-final-presupuesto-participativo-basado-en-resultados-2026',
+            }
+        ]
+    },
+{
+        id: 1,
         titulo: 'Presupuesto Participativo 2025',
         fecha: '2024-03-15',
         year: 2025,
@@ -29,7 +45,6 @@ export const bdPresupuesto = [
             }
         ]
     },
-
 ];
 
 export default bdPresupuesto;
