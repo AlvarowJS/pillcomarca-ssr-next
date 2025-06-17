@@ -8,45 +8,51 @@ interface Props {
 }
 
 export const NoticiaItem = ({ noticia }: Props) => {
-    const [año, mes, dia] = noticia.fecha.split("-");
-    const fechaFormateada = `${dia}-${mes}-${año}`;
+    const fecha = new Date(noticia.fecha).toLocaleDateString('es-PE', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+    });
 
     return (
-        <div className="bg-white shadow-md mb-6 border border-gray-200 sm:w-32 md:w-64 lg:w-64">
-            <Link
-                key={noticia.id}
-                href={`noticias/${noticia.id}`}                
-            >
-                <Image
-                    src={noticia.noticia_imagenes[0].imagen}
-                    alt={noticia.titulo}
-                    className="h-48 w-96 sm:w-100 object-cover"
-                    width={400}
-                    height={300}
-                />
-            </Link>
-            <div className="p-4 space-y-3">
-                <h5 className="text-2xl font-semibold text-gray-900">
+        <div className="relative w-full max-w-sm overflow-hidden rounded-lg shadow-md group border border-gray-200 hover:shadow-lg transition-all duration-300">
+            {/* Imagen (igual que antes) */}
+            <Image
+                src={noticia.noticia_imagenes[0].imagen}
+                alt={noticia.titulo}
+                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                width={400}
+                height={300}
+            />
+
+            {/* Contenido base (igual que tu versión original) */}
+            <div className="bg-white p-4 h-40">
+                <h5 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2">
                     {noticia.titulo}
                 </h5>
-
-                <p className="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
-                    Publicado: {fechaFormateada}
-                </p>
-
-                <p className="text-gray-700 text-sm leading-relaxed line-clamp-3">
-                    {noticia.nota}
-                </p>
-
-                <Link
-                    key={noticia.id}
-                    href={`noticias/${noticia.id}`}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 mt-2 text-sm font-medium text-white bg-sky-600 rounded-full hover:bg-sky-700 transition-all shadow-md"
-                >
-                    Leer más
-                    <FaArrowRight className="w-4 h-4" />
-                </Link>
+                <p className="text-sm text-gray-600">{fecha}</p>
             </div>
+
+            {/* Overlay hover (AJUSTADO para levantarse solo la mitad) */}
+<div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-b from-green-500 to-sky-600 text-white p-4 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-between transform translate-y-full group-hover:translate-y-0">
+    <p className="text-l font-extrabold text-white drop-shadow-sm leading-snug mb-1">
+        {noticia.titulo}
+    </p>
+    <p className="inline-block bg-white/20 text-white text-sm font-semibold px-3 py-1 rounded-full mb-2 w-fit">
+        {fecha}
+    </p>
+    <p className="text-white/90 text-sm leading-relaxed line-clamp-3 mb-2">
+        {noticia.nota}
+    </p>
+    <div className="text-right">
+        <Link
+            href={`noticias/${noticia.id}`}
+            className="inline-flex items-center gap-1 text-white font-semibold hover:underline"
+        >
+            Leer Más <FaArrowRight className="w-4 h-4" />
+        </Link>
+    </div>
+</div>
         </div>
     );
 };

@@ -84,7 +84,7 @@ export default function HistoriaPage() {
       <section className="space-y-4">
         <h2 className="text-2xl md:text-3xl font-bold text-cyan-500">Cayhuayna en el periodo de la República</h2>
         <p className="text-gray-700 text-justify md:text-lg">
-          En la etapa republicana, Cayhuayna formó parte de una hacienda hasta 1974, perteneciente a Augusto Figueroa Villamil. La última administradora fue Sofía Figueroa. Con la Reforma Agraria, Cayhuayna pasó a ser una cooperativa agraria, dirigida por sus trabajadores, bajo el nombre de Cooperativa Agraria de Trabajadores "General Juan Velasco Alvarado", que duró hasta 1989.
+          En la etapa republicana, Cayhuayna formó parte de una hacienda hasta 1974, perteneciente a Augusto Figueroa Villamil. La última administradora fue Sofía Figueroa. Con la Reforma Agraria, Cayhuayna pasó a ser una cooperativa agraria, dirigida por sus trabajadores, bajo el nombre de Cooperativa Agraria de Trabajadores &ldquo;General Juan Velasco Alvarado&rdquo;, que duró hasta 1989.
         </p>
       </section>
 
