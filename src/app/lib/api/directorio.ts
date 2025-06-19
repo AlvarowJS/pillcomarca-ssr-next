@@ -1,6 +1,7 @@
 import { DirectorioResponse } from "@/interfaces/directorio.interface";
 import { apiFetch } from "../http";
 import { Regidor } from "@/interfaces/regidor.interface";
+import { Alcalde } from "@/interfaces";
 interface DirectorioFilter {
     page?: number;
   }
@@ -16,4 +17,7 @@ export async function getDirectorio(filters: DirectorioFilter = {}): Promise<Dir
 }
 export async function getRegidor(): Promise<Regidor[]> {
   return await apiFetch('/v1/directorios-regidor');
+}
+export async function getAlcalde(): Promise<Alcalde[]> {
+  return await apiFetch('/v1/directorios-alcaldes');
 }
