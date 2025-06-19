@@ -78,7 +78,6 @@ export const Footer = () => {
       </div>
     </div>
 
-    {/* Mapas */}
     <div className="relative h-[350px] bg-gray-50">
       <iframe
         className={`absolute top-0 left-0 w-full h-full transition-opacity duration-300 ease-in-out ${

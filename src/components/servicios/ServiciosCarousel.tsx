@@ -26,7 +26,7 @@ export default function ServiciosCarousel() {
     { nombre: 'Seguridad Ciudadana', icono: <IoShieldCheckmarkSharp size={50} />, link: '/seguridad-ciudadana' },
     { nombre: 'Correo Institucional', icono: <GoMail size={50} />, link: 'https://munipillcomarca.gob.pe:2096' },
     { nombre: 'Libro de Reclamaciones', icono: <GiOpenBook size={50} />, link: 'https://reclamos.servicios.gob.pe/?institution_id=3654' },
-    { nombre: 'INTRANET', icono: <TfiWorld size={50} />, link: 'https://intranet.munipillcomarca.gob.pe/tickets' },
+    { nombre: 'INTRANET', icono: <TfiWorld size={50} />, link: 'https://intranet.munipillcomarca.gob.pe/login' },
     { nombre: 'Presupuesto Participativo', icono: <FaPeopleGroup size={50} />, link: '/presupuesto-participativo' },
   ];
 
