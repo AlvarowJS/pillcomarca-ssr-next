@@ -15,6 +15,7 @@ export const navItems: NavItem[] = [
             { path: '/registro-visitas', text: 'Registro de Visitas' },
             { path: '/acceso-informacion', text: 'Acceso a la Información' },
             { path: '/agenda-institucional', text: 'Agenda Institucional' },
+            { path: '/saca-tu-basura', text: 'Horario de Reciclaje' },
         ]
     },
     {
